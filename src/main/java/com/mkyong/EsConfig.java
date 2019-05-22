@@ -2,8 +2,10 @@ package com.mkyong;
 
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
+
 import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.InetSocketTransportAddress;
+import org.elasticsearch.common.transport.TransportAddress;
+import org.elasticsearch.transport.client.PreBuiltTransportClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,21 +36,24 @@ public class EsConfig {
     @Bean
     public Client client() throws Exception {
 
-        Settings esSettings = Settings.settingsBuilder()
+        Settings esSettings = Settings.builder()
                 .put("cluster.name", EsClusterName)
                 .build();
 
+
+
         //https://www.elastic.co/guide/en/elasticsearch/guide/current/_transport_client_versus_node_client.html
-        return TransportClient.builder()
-                .settings(esSettings)
-                .build()
-                .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(EsHost), EsPort));
+        TransportClient clientTransport = new PreBuiltTransportClient(Settings.EMPTY)
+                .addTransportAddress(new TransportAddress(InetAddress.getByName(EsHost), 9300))
+                .addTransportAddress(new TransportAddress(InetAddress.getByName(EsHost), 9300));
+
+        return clientTransport;
     }
 
-    @Bean
+  /*  @Bean
     public ElasticsearchOperations elasticsearchTemplate() throws Exception {
         return new ElasticsearchTemplate(client());
-    }
+    }*/
 
     //Embedded Elasticsearch Server
     /*@Bean

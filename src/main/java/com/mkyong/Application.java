@@ -49,12 +49,15 @@ public class Application implements CommandLineRunner {
     private void printElasticSearchInfo() {
 
         System.out.println("--ElasticSearch-->");
-        Client client = es.getClient();
+      /*  Client client = es.getClient();
         Map<String, String> asMap = client.settings().getAsMap();
 
         asMap.forEach((k, v) -> {
             System.out.println(k + " = " + v);
         });
+
+
+       */
         System.out.println("<--ElasticSearch--");
     }
 
