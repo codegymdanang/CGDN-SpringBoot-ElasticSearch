@@ -37,15 +37,15 @@ public class EsConfig {
     public Client client() throws Exception {
 
         Settings esSettings = Settings.builder()
-                .put("cluster.name", EsClusterName)
+                .put("cluster.name", "mkyong-cluster")
                 .build();
 
 
 
         //https://www.elastic.co/guide/en/elasticsearch/guide/current/_transport_client_versus_node_client.html
-        TransportClient clientTransport = new PreBuiltTransportClient(Settings.EMPTY)
-                .addTransportAddress(new TransportAddress(InetAddress.getByName(EsHost), 9300))
-                .addTransportAddress(new TransportAddress(InetAddress.getByName(EsHost), 9300));
+        TransportClient clientTransport = new PreBuiltTransportClient(esSettings)
+                .addTransportAddress(new TransportAddress(InetAddress.getByName("localhost"), 9300))
+                .addTransportAddress(new TransportAddress(InetAddress.getByName("localhost"), 9300));
 
         return clientTransport;
     }
