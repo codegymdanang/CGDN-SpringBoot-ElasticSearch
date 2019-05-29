@@ -6,3 +6,5 @@ cluster.name: mkyong-cluster <br>
 + Bật 1 node lên trên elasticsearch
 node.name: node-1 <br>
 
+## Các câu query phổ biến
+https://viblo.asia/p/23-cau-truy-van-huu-ich-trong-elasticsearch-phan-1-Ljy5VoMbKra
