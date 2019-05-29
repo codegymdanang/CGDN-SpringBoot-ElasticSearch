@@ -10,66 +10,66 @@ node.name: node-1 <br>
 https://viblo.asia/p/23-cau-truy-van-huu-ich-trong-elasticsearch-phan-1-Ljy5VoMbKra
 
 ## Cheatsheet 
-# Elasticsearch Cheatsheet - an overview of commonly used Elasticsearch API commands
+# Elasticsearch Cheatsheet - an overview of commonly used Elasticsearch API commands <br>
 
-# cat paths
-/_cat/allocation
-/_cat/shards
-/_cat/shards/{index}
-/_cat/master
-/_cat/nodes
-/_cat/indices
-/_cat/indices/{index}
-/_cat/segments
-/_cat/segments/{index}
-/_cat/count
-/_cat/count/{index}
-/_cat/recovery
-/_cat/recovery/{index}
-/_cat/health
-/_cat/pending_tasks
-/_cat/aliases
-/_cat/aliases/{alias}
-/_cat/thread_pool
-/_cat/plugins
-/_cat/fielddata
-/_cat/fielddata/{fields}
+# cat paths <br>
+/_cat/allocation <br>
+/_cat/shards <br>
+/_cat/shards/{index} <br>
+/_cat/master <br>
+/_cat/nodes <br>
+/_cat/indices <br>
+/_cat/indices/{index} <br>
+/_cat/segments <br>
+/_cat/segments/{index}<br>
+/_cat/count<br>
+/_cat/count/{index}<br>
+/_cat/recovery<br>
+/_cat/recovery/{index}<br>
+/_cat/health<br>
+/_cat/pending_tasks<br>
+/_cat/aliases<br>
+/_cat/aliases/{alias}<br>
+/_cat/thread_pool<br>
+/_cat/plugins<br>
+/_cat/fielddata<br>
+/_cat/fielddata/{fields}<br>
 
-# Important Things
-bin/elasticsearch                                                       # Start Elastic instance
-curl -X GET  'http://localhost:9200/?pretty=true'                       # View instance metadata
-curl -X POST 'http://localhost:9200/_shutdown'                          # Shutdown Elastic instance
-curl -X GET 'http://localhost:9200/_cat?pretty=true'                    # List all admin methods
-curl -X GET 'http://localhost:9200/_cat/indices?pretty=true'            # List all indices
-curl -X GET 'http://localhost:9200/_cluster/health?pretty=true'         # View Cluster Health
+# Important Things<br>
+bin/elasticsearch                                                       # Start Elastic instance <br>
+curl -X GET  'http://localhost:9200/?pretty=true'                       # View instance metadata <br>
+curl -X POST 'http://localhost:9200/_shutdown'                          # Shutdown Elastic instance <br>
+curl -X GET 'http://localhost:9200/_cat?pretty=true'                    # List all admin methods <br>
+curl -X GET 'http://localhost:9200/_cat/indices?pretty=true'            # List all indices <br>
+curl -X GET 'http://localhost:9200/_cluster/health?pretty=true'         # View Cluster Health <br>
 
-# Index, Type Basics
-curl -X GET  'http://localhost:9200/<index name>'                       # View specific index
-curl -X POST 'http://localhost:9200/<index name>'                       # Create an index
-curl -X DELETE 'http://localhost:9200/<index name>'                     # Delete an index
+# Index, Type Basics<br>
+curl -X GET  'http://localhost:9200/<index name>'                       # View specific index <br>
+curl -X POST 'http://localhost:9200/<index name>'                       # Create an index <br>
+curl -X DELETE 'http://localhost:9200/<index name>'                     # Delete an index <br>
 
-curl -X GET  'http://locahost:9200/<index name>/<type>/<id>'            # Retrieve a specific document
-curl -X POST 'http://locahost:9200/<index name>/<type>/'                # Create a document
-curl -X PUT  'http://locahost:9200/<index name>/<type>/<id>'            # Create/Update a specific document
-curl -X DELETE 'http://localhost:9200/<index name>/<type>/<id>'         # Delete a specific document
+curl -X GET  'http://locahost:9200/<index name>/<type>/<id>'            # Retrieve a specific document <br>
+curl -X POST 'http://locahost:9200/<index name>/<type>/'                # Create a document <br>
+curl -X PUT  'http://locahost:9200/<index name>/<type>/<id>'            # Create/Update a specific document <br>
+curl -X DELETE 'http://localhost:9200/<index name>/<type>/<id>'         # Delete a specific document <br>
 
-curl -X GET  'http://localhost:9200/<index name>/_mappings'             # View mappings for index
-curl -X GET  'http://localhost:9200/<index name>/_settings'             # View setting information for an index
+curl -X GET  'http://localhost:9200/<index name>/_mappings'             # View mappings for index <br>
+curl -X GET  'http://localhost:9200/<index name>/_settings'             # View setting information for an index <br>
 
-curl -X GET  'http://localhost:9200/<index name>/<type>/_mappings'      # View mappings for an index type
-curl -X GET  'http://localhost:9200/<index name>/<type>/_settings'      # View setting information for an index type
+curl -X GET  'http://localhost:9200/<index name>/<type>/_mappings'      # View mappings for an index type<br>
+curl -X GET  'http://localhost:9200/<index name>/<type>/_settings'      # View setting information for an index type<br>
 
-curl -X GET  'http://localhost:9200/<index name>/_search'               # Search an index
-curl -X GET  'http://localhost:9200/<index name>/<type>/_search'        # Search an index type
+curl -X GET  'http://localhost:9200/<index name>/_search'               # Search an index<br>
+curl -X GET  'http://localhost:9200/<index name>/<type>/_search'        # Search an index type<br>
 
-# Bulk API
-curl -X GET 'http://localhost:9200/_bulk'                               
-curl -X GET 'http://localhost:9200/<index name>/_bulk' 
-curl -X GET 'http://localhost:9200/<index name>/<type>/_bulk' 
+# Bulk API<br>
+curl -X GET 'http://localhost:9200/_bulk'        <br>                       
+curl -X GET 'http://localhost:9200/<index name>/_bulk' <br>
+curl -X GET 'http://localhost:9200/<index name>/<type>/_bulk' <br>
 
-# Elastic River Basics
-curl -X GET 'http://localhost:9200/_river/_meta'                      # View River settings
-curl -X GET 'http://localhost:9200/_river/<index name>/_meta'         # View River meta data for index
-curl -X GET 'http://localhost:9200/_river/<index name>/_meta/_source' # View River source for index
-curl -X GET 'http://localhost:9200/_river/<index name>/_status'       # View River status
-curl -X GET 'http://localhost:9200/_river/<index name>/_search'       # Seach the River Index
+# Elastic River Basics<br>
+curl -X GET 'http://localhost:9200/_river/_meta'                      # View River settings<br>
+curl -X GET 'http://localhost:9200/_river/<index name>/_meta'         # View River meta data for index<br>
+curl -X GET 'http://localhost:9200/_river/<index name>/_meta/_source' # View River source for index<br>
+curl -X GET 'http://localhost:9200/_river/<index name>/_status'       # View River status<br>
+curl -X GET 'http://localhost:9200/_river/<index name>/_search'       # Seach the River Index<br>
