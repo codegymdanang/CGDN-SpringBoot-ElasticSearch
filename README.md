@@ -7,7 +7,8 @@ cluster.name: mkyong-cluster <br>
 node.name: node-1 <br>
 
 ## Các câu query phổ biến
-https://viblo.asia/p/23-cau-truy-van-huu-ich-trong-elasticsearch-phan-1-Ljy5VoMbKra
+https://viblo.asia/p/23-cau-truy-van-huu-ich-trong-elasticsearch-phan-1-Ljy5VoMbKra <br>
+http://moliware.com/es-dsl-cheatsheet/ <br>
 
 ## Cheatsheet 
 # Elasticsearch Cheatsheet - an overview of commonly used Elasticsearch API commands <br>
