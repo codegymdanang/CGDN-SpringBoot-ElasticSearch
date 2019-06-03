@@ -1,5 +1,6 @@
 # CGDN-SpringBoot-ElasticSearch 
 ## Install elasticsearch and configure
++ Cài đặt tool elasticsearch toolbox plugin cho chrome để test  
 + https://www.elastic.co/downloads/elasticsearch <br>
 + Chỉnh sửa file application properties giống như trong file confgure của ES <br>
 cluster.name: mkyong-cluster <br>
